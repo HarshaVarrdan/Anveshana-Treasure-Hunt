@@ -1,13 +1,9 @@
+var riddleNumber = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
-    const riddleNumber = params.get("riddle");
+    riddleNumber = params.get("riddle");
 
-    if (riddleNumber) {
-        const riddleContainer = document.getElementById(`riddle${riddleNumber}-container`);
-        if (riddleContainer) {
-            riddleContainer.style.display = "block";
-        }
-    }
 });
 
 function checkPassword() {
@@ -15,7 +11,7 @@ function checkPassword() {
     const correctPassword = "datum2024";
     if (userPassword === correctPassword) {
         document.querySelector('.password-container').style.display = 'none';
-        document.getElementById("riddle-container").style.display = 'block';
+        document.getElementById(`riddle${riddleNumber}-container`).style.display = 'block';
     } else {
         document.getElementById("password-result").innerHTML = "<p>Incorrect password. Please try again.</p>";
     }
