@@ -1,14 +1,15 @@
-var riddleNumber = 0;
+var riddleNumber = 1;
 
 document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     riddleNumber = params.get("riddle");
 
+    console.log(riddleNumber);    
 });
 
 function checkPassword() {
     const userPassword = document.getElementById("password").value;
-    const correctPassword = "datum2024";
+    const correctPassword = "datum2425";
     if (userPassword === correctPassword) {
         document.querySelector('.password-container').style.display = 'none';
         document.getElementById(`riddle${riddleNumber}-container`).style.display = 'block';
